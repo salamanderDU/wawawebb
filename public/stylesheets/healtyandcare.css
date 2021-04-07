@@ -1,0 +1,202 @@
+
+/*รูปภาพและหัวข้อข้อง Tag นั้น ๆ */
+#navigation{
+    height:150px ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1525604155062-d5b01d84ad81");
+    opacity: 0.8;
+    object-fit: contain;
+}
+#nav-header{
+  font-size: 70px;
+  font-weight: bolder;
+  opacity: 1;
+  color: rgb(240, 240, 240);
+  margin: auto;
+}
+
+/*--------Viewmore----------------*/
+a.view:link,a.view:active,a.view:visited{
+  color: black;
+  font-size: normal;
+  text-decoration: none;
+}
+a.view:hover{
+  color: rgb(102, 102, 102);
+  font-size: normal;
+}
+/*--------------------------------------*/
+/*โพสต์ */
+.card{
+  text-align: left;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+/*Create post รูปภาพ*/
+.post{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sidebar-area img{ 
+  width: 250px;
+  height: 100%;
+  text-align: center;
+
+}
+/*detali ของแต่ละโพสต์ */
+.detail{
+  text-align: left ;
+}
+/*Tag ด้านข้าง */
+h6{
+  width: 250px;
+  padding: 5px 5px; 
+  margin: auto;
+}
+a.category:link,a.category:active,a.category:visited{
+  color: black;
+  font-size:medium;
+  text-decoration: none;
+  background-color: #A6C3EB; 
+}
+a.category:hover{
+  background-color: #76A4E0;
+}
+h6.name{
+  background-color: #A6C3EB; 
+  color: whitesmoke;
+  font-size:medium;
+  text-decoration: none;
+}
+h6.name:hover{
+  background-color: #76A4E0;
+}
+/*Text Header*/
+.title{
+  font-size: large;
+  margin-top:20px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+/*post comment*/
+/* .post-comment{
+  margin-top: 25px;
+} */
+/*Viewmore*/
+.viewmore{
+  margin-top: 10px;
+}
+/*Title Post*/
+.posttitle{
+  margin-top: 10px;
+}
+/*account Post*/
+.account{
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+
+/*-------navbar menu ด้านข้าง  -----------*/
+.dropdown{
+  width: auto;
+  margin-left: 0;
+}
+.menu{
+    text-align: left;
+    position: fixed;
+    width: 20%;
+    z-index: 200;
+}
+/* I hide the checkbox because I only need the label */
+#check{
+    display: none;
+}
+.button{
+    width: 48px;
+    height: 48px;
+    background:  #76A4E0;
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 8px;
+    line-height: 8px;
+    text-align: left;
+    position: fixed;
+    right: 10;
+    top: 10;
+    z-index: 100;
+}
+.button:hover{
+    background:  #A6C3EB;
+}
+.button span{
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62,.43,.35,1.47);
+}
+/* toggle icon animation */
+#check:checked ~ .button span:nth-child(1){
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+#check:checked ~ .button span:nth-child(2){
+    width: 0;
+}
+
+#check:checked ~ .button span:nth-child(3){
+    width:50%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+
+/* the nav height is set to 0 when the navbar is closed */
+
+nav{
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    height: 0;
+}
+nav a{
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22,.43,.35,1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    margin-left: 55px;
+    border-bottom: 1px solid #b4ac97;
+}
+nav a:hover{
+    background:  #A6C3EB;
+}
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check:checked ~ nav{
+    height: 350px;
+}
+#check:checked ~ nav a{
+    padding: 10px;
+    opacity: 1;
+    transform: scale(1);
+}
+.like{
+  position: absolute;
+  bottom: 20%;
+}
+.card-img-top{
+  position: relative;
+  left: 3%;
+}
+

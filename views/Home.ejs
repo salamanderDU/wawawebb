@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+   
+    <!-- Nav bar ของทุกหน้า จะใช้ Stlye.css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- แต่ละหน้าจะต้อง css ตามชื่อหน้านั้นๆ  -->
+    <link rel="stylesheet" href="/stylesheets/home.css">
+
+    <script src="https://kit.fontawesome.com/7f672680b1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7f672680b1.js" crossorigin="anonymous"></script>
+    
+    <!--bootstrap cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+<!-- Head  -->
+        <div class="header">
+          <p class="title">NEW NORMAL . NEW FRIENDS.</p>
+          <h1>Social Friends</h1>
+        </div>
+<!-- แถบเมนู --> 
+        <div class="container-fluid" id="head"> 
+          <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+            <a href="/" class="navbar-brand">
+              <img src="/images/logo1_crop.jpg" >
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active " href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="/account" class="nav-link ">ACCOUNT</a>
+                    </li>
+                    <li class=" nav-item dropdown ">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Welcome <%= title %>
+                      </a>
+                      <ul class="dropdown-menu k" aria-labelledby="navbarDarkDropdownMenuLink">
+                          <li><a class="dropdown-item" href="/login">Login</a></li>
+                          
+                          <li><a class="dropdown-item" href="/logout" id="logout">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+          </nav>
+        </div>
+<!--สร้าง Column  3 Col-->
+      <div class="px-4 py-3">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                  
+                  <!-- Col 1  Popular Tag -->
+                  <div class="col-lg-2 mb-2 pr-lg-1" id="tablepoppular">
+                    <table class="table table-bordered">
+                      <thead >
+                        <tr class="tag text-light bg-dark">
+                          <th scope="col">Popular Tag</th>
+                        </tr>
+                        <% for (var i =0; i <= 3;  i++ ) { %>
+                        <tr class="tag">
+                          <th scope="col"><a class="linktag" href="/tag/<%=pop[i].tag%>"><%=pop[i].tag%></a></th>
+                        </tr>
+                        <%}%>
+                      </thead>
+                  </table>
+                    </table>  
+                  </div>
+
+                  <!--Col 2  เกีี่ยวกับโพสต์ต่างๆ -->
+                  <!-- คลิ๊กรูปแล้วสามารถไปยังโพสต์นั้นๆได้ -->
+                  <div class="col-lg-8 mb-2 pr-lg-1" id="post">
+
+                    <!-- Post -->
+                    <% for (var i =0; i <= rows.length-1;  i++ ) { %>
+                    <div class="card w-65">
+                            <div class="col post">
+                              <div class="row no-gutters">
+                                <div class="col8 col-sm-6 col-md-6">
+                                  <a href="/post"> 
+                                    <img class="card-img-top float-left"  src="https://images.unsplash.com/photo-1509440159596-0249088772ff" class="card-img-top" id="textname" alt="Card image cap" >
+                                  </a>
+                                  </div>
+                                <div class="col-md-5 details">
+                                  <blockquote class="detail">
+                                    <h5 class="account"><%= rows[i].name %>  </h5>
+                                    <small class="posttime"></small>
+
+                                    <h5 class="posttitle"><%= rows[i].title %></h5>
+                                    <small class="detailtest"><%= rows[i].postdata %></small>
+                                    <div class="viewmore text-end">
+                                      <a href="#" onclick="godpost('/post/<%= rows[i].pid %>')" class="view">View more</a>
+                                        </div>
+                                        <!-- <div class="post-comment">
+                                          <input type="text" class="form-control" placeholder="Post a comment">
+                                        </div> -->
+                                        <div class="like">
+                                          <!-- คุ่มไลค์ like -->
+                                          <a class="far fa-heart text-end" onclick="godlike('/likes/<%= rows[i].pid %>')"></a><%= rows[i].likecount %>
+                                          <script>
+                                            function godlike(text) {    
+                                              location.href = text
+                                            }
+                                            function godpost(text) {    
+                                              location.href = text
+                                            }
+                                          </script>
+                                        </div>
+                                  </blockquote>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                    <%}%>
+                    
+                  </div>
+
+                  <!--Col 3  รวม Tag-->
+                  <div class="col-lg-2 mb-2 pr-lg-1" id="tag">
+                    <div class="sidebar-area">
+                      <div class="sidebar-section category-area">
+                        <h4 class="title"><b class="light-color">TAG</b></h4><br>
+
+                        <a class="category" href="/tag/HealtyCare">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Healty&Care</h6>
+                        </a><br>
+          
+                        <a class="category" href="/tag/Meditate">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Meditate</h6>
+                        </a> <br>
+
+                        <a class="category" href="/tag/Exercise">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Exercise</h6>
+                        </a> <br>
+          
+                        <a class="category" href="/tag/Jogging">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Jogging</h6>
+                        </a><br>
+                        <a class="category" href="/tag/Eatinghealthy">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Eatinghealthy</h6>
+                        </a><br>
+                        <a class="category" href="/tag/Cooking">
+                          <img src="https://images.unsplash.com/photo-1457221675774-24790d99071a" alt="Category Image" id="textname">
+                          <h6 class="name">Cooking</h6>
+                        </a><br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </body>
+</html>

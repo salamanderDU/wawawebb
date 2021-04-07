@@ -1,0 +1,196 @@
+/* Header newNormal . New Friend */
+.title{
+    font-size: small;
+    
+    letter-spacing: 5px;
+}
+h1{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.header{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*Link Tag*/
+a.linktag:link,a.linktag:active,a.linktag:visited{
+    color: black;
+    font-size: large;
+    text-decoration: none;
+}
+a.linktag:hover{
+    background-color: #A6C3EB ;
+    color: black;
+    font-size: large;
+}
+/* Link Viewmore */
+a.view:link,a.view:active,a.view:visited{
+    color: black;
+    font-size: normal;
+    text-decoration: none;
+}
+a.view:hover{
+    color: rgb(102, 102, 102);
+    font-size: normal;
+}
+/*Col 1  popular tag*/
+tr .trend{
+    border: 0px solid;
+    background-color:black; 
+    color: white;
+    height: 20px;
+    text-align: center;
+    padding: 0;
+    
+}
+#tablepoppular{
+    margin-top: 25px;   
+}
+#post{
+    margin-top: 25px;
+}
+#tag{
+    margin-top: 25px;
+}
+/* Col 2 Post*/
+.card{
+    margin-bottom: 10px;
+}
+/* ขนาดรูปภาพของโพสต์ */
+.card-img-top{
+    width: 150px;
+    height: 250px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+/* พวกข้อมูลต่างๆ ใน post */
+.detail{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.posttime{
+    font-size: 10px;
+}
+.detailpost{
+    font-size: 15px;
+}
+.form-control{
+    margin-top: 10px;
+    height: 25px;   
+}
+div .col-md-6{
+    height: 280px;
+}
+.posttitle{
+    margin-top: 10px; 
+}
+/*post comment*/
+.post-comment{
+    margin-top: 25px;
+}
+  /*Viewmore*/
+.viewmore{
+    margin-top: 10px;
+
+}
+  /*Title Post*/
+.posttitle{
+    margin-top: 10px;
+}
+  /*account Post*/
+.account{
+    font-size: 25px;
+    margin-top: 10px;
+}
+  
+
+/*Col 3 Tag */
+
+.col-md-3{
+    margin-top: 25px;  
+    
+}
+.fa-heart{
+    margin-top: 5px;
+   float: right;
+}
+tr{
+   vertical-align: middle;
+}
+.category-area .category{ 
+    margin-bottom: 5px; 
+}
+h6{
+    width: 250px;
+    padding: 5px 5px; 
+    margin: auto;
+}
+/*ขนาดรูปของ tag*/
+.sidebar-area img{ 
+    width: 250px;
+    height: 100px;
+}
+/*Link Tag */
+a.category:link,a.category:active,a.category:visited{
+    color: black;
+    font-size:medium;
+    text-decoration: none;
+    background-color: #A6C3EB; 
+}
+a.category:hover{
+    background-color: #76A4E0;
+}
+.title{
+    font-size: large;
+}
+h6.name{
+    background-color: #A6C3EB; 
+    color: whitesmoke;
+    font-size:medium;
+    text-decoration: none;
+}
+h6.name:hover{
+    background-color: #76A4E0;
+}
+
+/* hover Image styles */
+.card-img-top:hover{
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+#text {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background:rgba(139, 137, 132, 0.4);
+}
+.card-img-top:link,a:active,a:visited #text{
+    color: white;
+    transition: 0.3s ease-in;
+    justify-content:center;
+    align-items: center;
+}
+/* IMG HOVER */ 
+.card-img-top:hover {
+    transform: scale(1.2);
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+/* .light-color{
+    margin-left: 5px;
+} */
+.like{
+    position: absolute;
+  bottom: 20%;
+}
+
